@@ -46,6 +46,10 @@ Every story was verified against reporting dated Saturday 21 November 2026 (One 
 
 `main.ts` copies `entry.png` byte for byte to `/output/entry.png`, so every run writes identical bytes (deterministic). PNG, 1024×1024, 196,744 bytes — inside the 1 MiB / 1024×1024 limits.
 
+## Build notes
+
+The poster was rendered by `render-news21.py` (kept outside the repo) from the 27 verified stories of 21 November 2026 into a 1024×1024 PNG. `main.ts` does no rendering of its own: it reads the finished `entry.png` beside it and writes those exact bytes to `/output/entry.png`, creating the folder if needed. Because the transfer is a plain byte copy with no decoding or re-encoding, every run produces identical output.
+
 ## Verification
 
 - Poster: 1024×1024 PNG, 196,744 bytes (≤ 1,048,576). Date "SATURDAY 21 NOVEMBER 2026" and "WORLD NEWS IN ONE IMAGE" prominent at the top; all 27 headlines and one-liners read visually — no overlaps, no garbled text.
